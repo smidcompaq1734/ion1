@@ -13,8 +13,8 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        target: [esp32, esp32c3]
-        display: [cu2, cu3]
+        target: [esp32]
+        display: [cu2]
         custom: [std]
         include:
           - target: esp32
