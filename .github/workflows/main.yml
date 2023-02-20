@@ -16,13 +16,7 @@ jobs:
         target: [esp32]
         display: [cu2]
         custom: [std]
-        include:
-          - target: esp32
-            display: cu3
-            custom: mike
-          - target: esp32
-            display: cu3
-            custom: wroom2xrelay
+
     steps:
     - name: Checkout repo
       uses: actions/checkout@v3
