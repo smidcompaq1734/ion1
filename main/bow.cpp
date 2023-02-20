@@ -60,6 +60,7 @@ void initUart() {
     ESP_ERROR_CHECK(uart_param_config(UART_NUM, &uart_config));
     ESP_ERROR_CHECK(uart_intr_config(UART_NUM, &uart_intr));
     ESP_ERROR_CHECK(uart_set_pin(UART_NUM, TXD_PIN, RXD_PIN, UART_PIN_NO_CHANGE, UART_PIN_NO_CHANGE));
+    ESP_LOGI(TAG,"INIT UART %d %d %d", UART_NUM, TXD_PIN, RXD_PIN);
 }
 
 /**
