@@ -234,6 +234,17 @@ static void my_task(void *pvParameter) {
 
     loadDistances();
 
+    uint8_t payload[] = {0x00, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff}; // Data (last 10 bytes) to be replaced
+
+    if(calibrationFileExists()) {
+        if(readCalibrationData(payload + 1)) 
+        {
+            ESP_LOGI(TAG, "Calibration data:");
+            ESP_LOG_BUFFER_HEX(TAG, payload, 11);
+        }
+       }
+    
+    
 #if CONFIG_ION_CU2
     initCu2(controlEventGroup, 
             BUTTON_MODE_SHORT_PRESS_BIT, 
